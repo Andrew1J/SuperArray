@@ -25,4 +25,12 @@ public class SuperArray{
         data[index] = element;
         return val;
     }
+
+    private void resize(){
+        String[] new = new String[data.length+1];
+        for(int i=0;i<data.length;i++){
+            new[i] = data[i];
+        }
+        data = new;
+    }
 }

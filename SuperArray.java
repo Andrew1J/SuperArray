@@ -3,7 +3,7 @@ public class SuperArray{
     private int size;
 
     public SuperArray(){
-        String[] data = new String[10];
+        data = new String[10];
         size = 0;
     }
 
@@ -29,7 +29,7 @@ public class SuperArray{
     }
 
     private void resize(){
-        String[] newarr = new String[data.length+1];
+        String[] newarr = new String[data.length+10];
         for(int i=0;i<data.length;i++){
             newarr[i] = data[i];
         }

@@ -65,4 +65,9 @@ public class SuperArray{
         }
         return result;
     }
+
+    public SuperArray(int initialCapacity){
+        data = new String[initialCapacity];
+        size = 0;
+    }
 }

@@ -54,4 +54,14 @@ public class SuperArray{
         result += data[size-1] + "]";
         return result;
     }
+
+    public boolean contains(String s){
+        boolean result = false;
+        for(int i=0;i<size;i++){
+            if(data[i].equals(s)){
+                result = true;
+            }
+        }
+        return result;
+    }
 }

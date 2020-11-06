@@ -82,11 +82,15 @@ public class SuperArray{
 
     public String remove(int index){
         String value = data[index];
-        for(int i=index;i<size-1;i++){
-            data[i] = data[i+1];
-        }
-        data[size] = null;
-        size--;
+        String[] newData = new String[data.length];
+		for(int i=0; i<index; i++){
+			newData[i] = data[i];
+		}
+		for(int i=index+1; i<size; i++){
+			newData[i-1]=data[i];
+		}
+		data = newData;
+		--size;
         return value;
     }
 

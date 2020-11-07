@@ -20,6 +20,14 @@ public class Demo{
       b.add("9"); b.add("1"); b.add("2"); b.add("2"); b.add("2"); b.add("3"); b.add("4");
       a.add("0"); a.add("4"); a.add("2"); a.add("2"); a.add("9");
       System.out.println(findOverlap(a,b));
+
+      //zip test
+      System.out.println(zip(a,b));
+      a.clear(); b.clear();
+      a.add("0"); a.add("4"); a.add("2"); a.add("6"); a.add("9");
+      b.add("9"); b.add("1"); b.add("3"); b.add("2"); b.add("2");
+      System.out.println(zip(a,b));
+      System.out.println(zip(b,a));
     }
 
     public static void removeDuplicates(SuperArray s){
@@ -42,5 +50,22 @@ public class Demo{
         return c;
     }
 
-
+    public static SuperArray zip(SuperArray a, SuperArray b){
+        SuperArray c = new SuperArray();
+        int minsize = Math.min(a.size(),b.size());
+        for(int i=0;i<minsize;i++){
+            c.add(a.get(i));
+            c.add(b.get(i));
+        }
+        if(a.size()>b.size()){
+            for(int i=minsize;i<a.size();i++){
+                c.add(a.get(i));
+            }
+        } else {
+            for(int i=minsize;i<b.size();i++){
+                c.add(b.get(i));
+            }
+        }
+        return c;
+    }
 }

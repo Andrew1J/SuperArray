@@ -117,4 +117,17 @@ public class SuperArray{
         }
         return -1;
     }
+
+    public boolean equals(SuperArray other){
+        boolean result = true;
+        if(size!=other.size){
+            return false;
+        }
+        for(int i=0;i<size;i++){
+            if(!data[i].equals(other.data[i])){
+                result = false;
+            }
+        }
+        return result;
+    }
 }

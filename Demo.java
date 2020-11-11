@@ -28,6 +28,35 @@ public class Demo{
       b.add("9"); b.add("1"); b.add("3"); b.add("2"); b.add("2");
       System.out.println(zip(a,b));
       System.out.println(zip(b,a));
+
+      //error testing
+      int errors = 0;
+      try{
+          SuperArray newSuperArray = new SuperArray(-5);
+      } catch(IllegalArgumentException e){
+          errors++;
+      }
+      try{
+          words.get(1000);
+      } catch(IndexOutOfBoundsException e){
+          errors++;
+      }
+      try{
+          words.set(words.size(),"okay");
+      } catch(IndexOutOfBoundsException e){
+          errors++;
+      }
+      try{
+          words.add(1000,"okay");
+      } catch(IndexOutOfBoundsException e){
+          errors++;
+      }
+      try{
+          words.remove(-1);
+      } catch(IndexOutOfBoundsException e){
+          errors++;
+      }
+      System.out.println(errors + " errors out of 5");
     }
 
     public static void removeDuplicates(SuperArray s){
